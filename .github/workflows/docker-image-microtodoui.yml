@@ -28,13 +28,13 @@ jobs:
       uses: actions/checkout@v6.0.2
       
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag todoacr01.azurecr.io/addtask:v1
+      run: docker build . --file Dockerfile --tag acrimg2.azurecr.io/addtask:v1
       
     - name: Login to Acr
-      run: az acr login --name todoacr01
+      run: az acr login --name acrimg2
       
     - name: Build and push
       uses: docker/build-push-action@v6
       with:
         push: true
-        tags: todoacr01.azurecr.io/addtask:v1
+        tags: acrimg2.azurecr.io/addtask:v1
